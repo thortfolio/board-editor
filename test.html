@@ -1,0 +1,49 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <title>test</title>
+</head>
+<body>
+<div>
+    <button onclick="changeTextBold()">볼드</button>
+</div>
+<div style="width: 800px; padding: 0 10px; border: 1px solid #ccc">
+    <p>It has been exactly 3 years since I wrote my first blog series entitled “Flavorful Tuscany”, but starting it was definitely not easy. Back then, I didn’t know much about blogging, let alone think that one day it could become my full-time job. Even though I had many recipes and food-related stories to tell, it never crossed my mind that I could be sharing them with the whole world</p>
+    <p>It has been <strong>exactly</strong> <em>3 years</em> since I wrote my first blog series entitled “Flavorful Tuscany”, but starting it was definitely not easy. Back then, I didn’t know much about blogging, let alone think that one day it could become my full-time job. Even though I had many recipes and food-related stories to tell, it never crossed my mind that I could be sharing them with the whole world</p>
+</div>
+<br>
+<h3>console</h3>
+<div style="width: 800px; min-height: 50px; padding: 0 10px; border: 1px solid #ccc">
+    <div id="console"></div>
+</div>
+
+<script type="text/javascript" src="http://img.sa.nexon.com/sa/js/jquery/jquery-1.11.3.min.js"></script>
+<script type="text/javascript">
+    function selectText() {
+        var selectionText = "";
+        if (window.getSelection) {
+            selectionText = window.getSelection();
+        } else if (document.selection) {
+            selectionText = document.selection.createRange().text;
+        }
+        return selectionText;
+    }
+
+    document.onmouseup = function() {
+        document.getElementById("console").innerHTML = selectText();
+        console.log(selectText());
+        console.log(selectText().toString());
+        console.log(selectText().anchorNode.length);
+    };
+    function wrap(el, wrapper) {
+        el.parentNode.insertBefore(wrapper, el);
+        wrapper.appendChild(el);
+    }
+    function changeTextBold(){
+
+    }
+</script>
+
+</body>
+</html>
